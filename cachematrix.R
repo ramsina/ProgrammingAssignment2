@@ -12,14 +12,14 @@ makeCacheMatrix <-function(x = matrix()) {
   getsolve <- function() m
   list(set = set, get = get,
        setinverse = setinverse,
-       getinverse = getinverse)
+       getsolve = getsolve)
 
 }
 ## tries to invert the matrix but checks if the inverted matrix already exists first
 
 cacheSolve <- function(x, ...) {
 
-    m <- x$getmean()
+    m <- x$getsolve()
     if(!is.null(m)) {
       message("getting cached inverse")
       return(m)
