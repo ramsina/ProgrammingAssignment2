@@ -1,5 +1,5 @@
-## trying to set up a function that will create a special matrix object that can cache
-# its inverse
+## The following gets and sets a matrix as well gets and sets the matrix's inverse.
+## It then cache's the inverse matrix
 
 makeCacheMatrix <-function(x = matrix()) {
   m <- NULL
@@ -15,7 +15,10 @@ makeCacheMatrix <-function(x = matrix()) {
        getsolve = getsolve)
 
 }
-## tries to invert the matrix but checks if the inverted matrix already exists first
+## The following function will try to get the inverse of a given matrix. 
+## But first it will check if the inverse exists. If the matrix has already
+## been inverted then it will get it from the cache and stop the rest of the 
+## computation
 
 cacheSolve <- function(x, ...) {
 
@@ -29,5 +32,5 @@ cacheSolve <- function(x, ...) {
     x$setinverse(m)
     m}
 
-## inverse of matrix
+
     
